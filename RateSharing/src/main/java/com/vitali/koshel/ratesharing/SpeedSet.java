@@ -17,7 +17,7 @@ public class SpeedSet {
     @Override
     public String toString(){
         if(state==0){
-        return "Ne dopystimay peredacha!!! "+gear;}
+        return "Ne dopystimay peredacha!!!! "+gear;}
         else {
             if(state==1){
                 return "Dopystimay peredacha "+gear+", speed is "+speed;
