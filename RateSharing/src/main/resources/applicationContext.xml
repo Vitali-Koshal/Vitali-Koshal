@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+    <context:property-placeholder location="classpath:myApp.properties"/>
+    <bean id="default"
+            class="com.vitali.koshel.ratesharing.Pump"
+            scope="prototype">
+        <property name="pumpName" value="default"/>
+        <property name="plungerDiametr" value="${Pump4_5inch.plungerDiametr}"/>
+        <property name="plungerStroke" value="${Pump4_5inch.plungerStroke}"/>
+        <property name="plungerQty" value="${Pump4_5inch.plungerQty}"/>
+        <property name="pumpGearRatio" value="${Pump4_5inch.pumpGearRatio}"/>
+    </bean>
+    <bean id="SPM2250_4.5_inches"
+            class="com.vitali.koshel.ratesharing.Pump"
+            scope="prototype">
+        <property name="pumpName" value="${Pump4_5inch.pumpName}"/>
+        <property name="plungerDiametr" value="${Pump4_5inch.plungerDiametr}"/>
+        <property name="plungerStroke" value="${Pump4_5inch.plungerStroke}"/>
+        <property name="plungerQty" value="${Pump4_5inch.plungerQty}"/>
+        <property name="pumpGearRatio" value="${Pump4_5inch.pumpGearRatio}"/>
+    </bean>
+    <!-- Parametrs of TWS2250 4 inches 3 plungers -->
+    <bean id="SPM2250_4_inches"
+            class="com.vitali.koshel.ratesharing.Pump"
+            scope="prototype">
+        <property name="pumpName" value="${Pump4inch.pumpName}"/>
+        <property name="plungerDiametr" value="${Pump4inch.plungerDiametr}"/>
+        <property name="plungerStroke" value="${Pump4inch.plungerStroke}"/>
+        <property name="plungerQty" value="${Pump4inch.plungerQty}"/>
+        <property name="pumpGearRatio" value="${Pump4inch.pumpGearRatio}"/>
+    </bean>
+    <bean id="0"
+          class="com.vitali.koshel.ratesharing.Engine"
+            scope="prototype">
+        <property name="engineName" value="${default.engineName}"/>
+        <property name="maxSpeed" value="${default.maxSpeed}"/>
+        <property name="minSpeed" value="${default.minSpeed}"/>
+    </bean>
+    <bean id="1"
+          class="com.vitali.koshel.ratesharing.Engine"
+            scope="prototype">
+        <property name="engineName" value="${Detroit.engineName}"/>
+        <property name="maxSpeed" value="${Detroit.maxSpeed}"/>
+        <property name="minSpeed" value="${Detroit.minSpeed}"/>
+    </bean>
+    <bean id="2"
+          class="com.vitali.koshel.ratesharing.Engine"
+            scope="prototype">
+        <property name="engineName" value="${EngineCat3512.engineName}"/>
+        <property name="maxSpeed" value="${EngineCat3512.maxSpeed}"/>
+        <property name="minSpeed" value="${EngineCat3512.minSpeed}"/>
+    </bean>
+    
+</beans>
