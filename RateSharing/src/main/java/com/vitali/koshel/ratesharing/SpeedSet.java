@@ -13,11 +13,11 @@ public class SpeedSet {
     SpeedSet(){}
     double speed=0;
     int gear=0;
-    int state=0;//0 красное, 1 желтое, 2 зеленое
+    int state=0;//0 красное, 1 желтое, 2 зеленое..
     @Override
     public String toString(){
         if(state==0){
-        return "Ne dopystimay peredacha!!!! "+gear;}
+        return "Ne dopystimay peredacha! "+gear;}
         else {
             if(state==1){
                 return "Dopystimay peredacha "+gear+", speed is "+speed;
